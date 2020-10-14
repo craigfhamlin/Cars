@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
 
         val customList = listOf("Ferrari Testarosa", "Honda Speedwagon", "Honda Civic", "Ford Fiesta")
 
-        val adapter = ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, customList)
-        val adapter2 = ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, customList)
+        var adapter = ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, customList)
+        var adapter2 = ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, customList)
 
         choose_car.adapter = adapter
         choose_car2.adapter = adapter2
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                     Toast.LENGTH_LONG).show()
             }
         }
-        choose_car2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+         choose_car2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
@@ -102,8 +102,6 @@ class MainActivity : AppCompatActivity() {
                             "Racer 1 selects: ${adapterView?.getItemAtPosition(position).toString()}",
                             Toast.LENGTH_LONG).show()
 
-
-
                         button.setOnClickListener {
                             var randomNumb = Math.round(Math.random() * 10)
                             var winCar:String? = null
@@ -117,8 +115,12 @@ class MainActivity : AppCompatActivity() {
                                 loseCar = one
                             }
                             textView.text = ("${winCar} wins!")
-                        }
+
+
+
                     }
+                }
+
                 }
                 Toast.makeText(this@MainActivity,
                     "Racer 2 selects: ${adapterView?.getItemAtPosition(position).toString()}",
