@@ -9,127 +9,92 @@ import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    var car1: String? = null
+    var car2: String? = null
+    val customList = listOf("Ferrari Testarosa", "Honda Speedwagon", "Honda Civic", "Ford Fiesta")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val customList = listOf("Ferrari Testarosa", "Honda Speedwagon", "Honda Civic", "Ford Fiesta")
+        fun setUpSpinners(){
+            var adapter = ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, customList)
+            var adapter2 = ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, customList)
+            choose_car.adapter = adapter
+            choose_car2.adapter = adapter2
+        }  // this is okay
 
-        var adapter = ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, customList)
-        var adapter2 = ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, customList)
-
-        choose_car.adapter = adapter
-        choose_car2.adapter = adapter2
-
-        choose_car.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-
-            override fun onItemSelected(
-                adapterView: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                var one = adapterView?.getItemAtPosition(position).toString()
-                choose_car2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                    override fun onNothingSelected(parent: AdapterView<*>?) {
-
-                    }
-
-                    override fun onItemSelected(
-                        adapterView: AdapterView<*>?,
-                        view: View?,
-                        position: Int,
-                        id: Long
-                    ) {
-                        var two = adapterView?.getItemAtPosition(position).toString()
-                        Toast.makeText(this@MainActivity,
-                            "Racer 2 selects: ${adapterView?.getItemAtPosition(position).toString()}",
-                            Toast.LENGTH_LONG).show()
-
-
-
-                        button.setOnClickListener {
-                            var randomNumb = Math.round(Math.random() * 10)
-                            var winCar:String? = null
-                            var loseCar:String? = null
-
-                            if(randomNumb <= 5){
-                                winCar = one
-                                loseCar = two
-                            } else {
-                                winCar = two
-                                loseCar = one
-                            }
-                            textView.text = ("${winCar} wins!")
-                        }
-                    }
-                }
-                Toast.makeText(this@MainActivity,
-                    "Racer 1 selects: ${adapterView?.getItemAtPosition(position).toString()}",
-                    Toast.LENGTH_LONG).show()
-            }
+        fun storeCar(car1: String, car2: String): List<String>{
+            var car = listOf(car1,car2)
+            return car
         }
-         choose_car2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        fun returnCar(a: String){
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
 
-            }
-
-            override fun onItemSelected(
-                adapterView: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                var one = adapterView?.getItemAtPosition(position).toString()
-                choose_car.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                    override fun onNothingSelected(parent: AdapterView<*>?) {
-
-                    }
-
-                    override fun onItemSelected(
-                        adapterView: AdapterView<*>?,
-                        view: View?,
-                        position: Int,
-                        id: Long
-                    ) {
-                        var two = adapterView?.getItemAtPosition(position).toString()
-                        Toast.makeText(this@MainActivity,
-                            "Racer 1 selects: ${adapterView?.getItemAtPosition(position).toString()}",
-                            Toast.LENGTH_LONG).show()
-
-                        button.setOnClickListener {
-                            var randomNumb = Math.round(Math.random() * 10)
-                            var winCar:String? = null
-                            var loseCar:String? = null
-
-                            if(randomNumb <= 5){
-                                winCar = one
-                                loseCar = two
-                            } else {
-                                winCar = two
-                                loseCar = one
-                            }
-                            textView.text = ("${winCar} wins!")
-
-
-
-                    }
-                }
-
-                }
-                Toast.makeText(this@MainActivity,
-                    "Racer 2 selects: ${adapterView?.getItemAtPosition(position).toString()}",
-                    Toast.LENGTH_LONG).show()
-                 button.setOnClickListener {
-                    textView.text = ("${adapterView?.getItemAtPosition(position).toString()}")
+        fun setUpButton(car1: String, car2: String) {
+            button.setOnClickListener {
+                var randomNumb = Math.round(Math.random() * 10)
+                if (randomNumb <= 5) {
+                    textView.text = ("${car1} wins!")
+                } else {
+                    textView.text = ("${car2} wins!")
                 }
             }
         }
+
+        fun addSpinnerListener()  {
+            choose_car.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                }
+
+                override fun onItemSelected(
+                    adapterView: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                )  {
+                    var car1 = adapterView?.getItemAtPosition(position).toString()
+                    returnCar(car1)
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Racer 1 selects: ${adapterView?.getItemAtPosition(position).toString()}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+
+            choose_car2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {}
+                override fun onItemSelected(
+                    adapterView: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long ) {
+                    var car2 = adapterView?.getItemAtPosition(position).toString()
+                    returnCar(car2)
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Racer 2 selects: ${adapterView?.getItemAtPosition(position).toString()}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    returnCar(car2)
+                }
+            }
+        }
+
+        fun createCars(){
+
+        }
+
+        fun getCarlist(){
+
+        }
+
+        fun raceSelectedCars(){
+
+        }
+        setUpSpinners()
+
 
 
         val ferrari = Car("ferrari", "testarossa")
@@ -157,9 +122,5 @@ class MainActivity : AppCompatActivity() {
 
         speed500.race(gimme.makeCars())
         val tim = listOf(winner1[0], winner2[0])
-
-
     }
-
-
 }
