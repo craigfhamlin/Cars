@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Cars</string>
+    <string-array name="car_options">
+        <item>Ferarri Testarosa</item>
+        <item>Honda Speedwagon</item>
+        <item>Honda Civic</item>
+        <item>Ford Fiesta</item>
+    </string-array>
 </resources>
