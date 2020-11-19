@@ -6,8 +6,8 @@ class Truck (val make:String, val model: String) {
     var oilLevel:String = "fine"
     var truckEngine: String = "super V12"
 
-    fun changeTires(tireType: String = "toyo"): String{
-        if(tireType != "crappy")
+    fun changeTires(tireType: String = "fine"): String{
+        if(tireType != "remove")
             tires = tireType
         println(tires)
         return tires
