@@ -1,9 +1,10 @@
 package com.haigcramlin.cars
 
-class Car (val make:String, val model: String) {
+class Truck (val make:String, val model: String) {
     var races = 0
     var tires:String = "none"
     var oilLevel:String = "fine"
+    var truckEngine: String = "super V12"
 
     fun changeTires(tireType: String = "toyo"): String{
         if(tireType != "crappy")
@@ -18,5 +19,4 @@ class Car (val make:String, val model: String) {
         println(oilLevel)
         return oilLevel
     }
-
 }

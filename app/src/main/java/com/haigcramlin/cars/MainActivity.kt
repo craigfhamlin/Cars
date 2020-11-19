@@ -89,7 +89,6 @@ class MainActivity : AppCompatActivity() {
                     car1 = adapterView?.getItemAtPosition(position).toString()
                 else
                     car2 = adapterView?.getItemAtPosition(position).toString()
-                var homey: List<String> = arrayListOf(car1.toString(), car2.toString())
 
             }
         }
@@ -103,10 +102,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun drawableResource(winner: String?) {
+    fun updateDrawableForWinner(winner: String?) {
         var drawableResource =
         when (winner) {
-            // "Ferrari Testarosa", "Honda Speedwagon", "Honda Civic", "Ford Fiesta"
             "Ferrari Testarosa" -> R.drawable.ferarri_testarossa
             "Honda Speedwagon" -> R.drawable.honda_speedwagon
             "Honda Civic" -> R.drawable.honda_civic
@@ -118,21 +116,18 @@ class MainActivity : AppCompatActivity() {
         removeCarImage?.setImageResource(R.drawable.blank)
     }
     fun raceSelectedCars() {
-        //get selected car from 1
-        //get selected car from 2
-
         var randomNumb = Math.round(Math.random() * 10)
         var winner: String? = null
 
         if (randomNumb <= 5) {
             textView.text = ("${car1} wins!")
             winner = car1
-            drawableResource(winner)
+            updateDrawableForWinner(winner)
 
         } else {
             textView.text = ("${car2} wins!")
             winner = car2
-            drawableResource(winner)
+            updateDrawableForWinner(winner)
         }
     }
 
