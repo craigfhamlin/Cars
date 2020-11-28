@@ -5,7 +5,7 @@ class Truck (val make:String, val model: String): Serviceable {
     var tires:String = "none"
     var oilLevel:String = "fine"
     var truckEngine: String = "super V12"
-    var oilClean:Boolean = true //Maybe after 10 races this flips to false? I dunno
+    var oilClean:Boolean = true
     override fun changeOil(){
         oilClean = true
     }

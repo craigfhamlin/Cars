@@ -4,7 +4,7 @@ class Car (val make:String, val model: String): Serviceable {
     var races: Int = 0
     var tires:String = "none"
     var oilLevel:String = "fine"
-    var oilClean:Boolean = true //Maybe after 10 races this flips to false? I dunno
+    var oilClean:Boolean = true
 
 
 
