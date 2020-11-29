@@ -1,13 +1,11 @@
 package com.haigcramlin.cars
 
-class Car (val make:String, val model: String): Serviceable {
-    var races: Int = 0
+class Truck (val make:String, val model: String): Serviceable {
+    var races = 0
     var tires:String = "none"
     var oilLevel:String = "fine"
+    var truckEngine: String = "super V12"
     var oilClean:Boolean = true
-
-
-
     override fun changeOil(){
         oilClean = true
     }
@@ -35,4 +33,5 @@ class Car (val make:String, val model: String): Serviceable {
         println(oilLevel)
         return oilLevel
     }
+
 }
