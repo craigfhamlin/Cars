@@ -5,7 +5,7 @@ class Truck (val make:String, val model: String): Serviceable {
     var tires:String = "none"
     var oilLevel:String = "fine"
     var truckEngine: String = "super V12"
-    var oilClean:Boolean = true
+    var oilClean:Boolean = true  // change to false after 10 races
     override fun changeOil(){
         oilClean = true
     }

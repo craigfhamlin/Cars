@@ -1,5 +1,6 @@
 package com.haigcramlin.cars
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,6 +15,8 @@ class MainActivity : AppCompatActivity() {
     var trophyImage2: ImageView? = null
     var removeCarImage: ImageView? = null
     var someCars: List<String?> = arrayListOf(car1, car2)
+    lateinit var buttonGoToNext: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,6 +27,12 @@ class MainActivity : AppCompatActivity() {
         createCarsAndTracks()
         setUpSpinners()
         setUpButton()
+        buttonGoToNext = findViewById(R.id.leaderBoard)
+        buttonGoToNext.setOnClickListener {
+           val intent: Intent = Intent(applicationContext, ResultActivity::class.java)
+           startActivity(intent)
+            // need a back to main button in result activity
+       }
 
     }
 
