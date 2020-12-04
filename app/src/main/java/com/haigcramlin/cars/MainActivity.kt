@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     var removeCarImage: ImageView? = null
     var someCars: List<String?> = arrayListOf(car1, car2)
     lateinit var buttonGoToNext: Button
-    //  lateinit var buttonGoToMain: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         setUpSpinners()
         setUpButton()
         buttonGoToNext = findViewById(R.id.leaderBoard)
-        //   buttonGoToMain = findViewById(R.id.Return1)
         buttonGoToNext.setOnClickListener {
             val intent: Intent = Intent(applicationContext, ResultActivity::class.java)
             startActivity(intent)
