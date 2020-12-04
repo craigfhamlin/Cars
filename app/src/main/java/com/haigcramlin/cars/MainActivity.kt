@@ -8,7 +8,7 @@ import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    // a change
+    // another change
     var car1: String? = null
     var car2: String? = null
     var winnerImage: ImageView? = null
