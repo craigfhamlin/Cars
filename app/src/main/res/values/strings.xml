@@ -6,4 +6,17 @@
         <item>Honda Civic</item>
         <item>Ford Fiesta</item>
     </string-array>
+    <string name="ferarri">Ferarri Testarosa</string>
+    <string name="ford">Ford Fiesta</string>
+    <string name="honda_s_wagon">Honda Speedwagon</string>
+    <string name="honda_civic">Honda Civic</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="rank">rank</string>
+    <string name="vehicle">vehicle</string>
+    <string name="races">races</string>
+    <string name="points">points</string>
 </resources>

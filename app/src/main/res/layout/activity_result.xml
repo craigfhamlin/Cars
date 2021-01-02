@@ -34,28 +34,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rank" />
+                android:textAllCaps="@string/rank" />
 
             <TextView
                 android:id="@+id/head_vehicle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Vehicle" />
+                android:textAllCaps="@string/vehicle" />
 
             <TextView
                 android:id="@+id/head_races"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Races" />
+                android:textAllCaps="@string/races" />
 
             <TextView
                 android:id="@+id/head_points"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Points" />
+                android:textAllCaps="@string/points" />
         </TableRow>
 
         <TableRow
@@ -68,28 +68,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="1" />
+                android:text="@string/one" />
 
             <TextView
                 android:id="@+id/first_place_vehicle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ferarri Testarosa" />
+                android:text="@string/ferarri" />
 
             <TextView
                 android:id="@+id/first_place_races"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="1" />
+                android:text="@string/one" />
 
             <TextView
                 android:id="@+id/first_place_points"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="5" />
+                android:text="@string/five" />
         </TableRow>
 
         <TableRow
@@ -102,28 +102,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="2" />
+                android:text="@string/two" />
 
             <TextView
                 android:id="@+id/second_place_vehicle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Honda Speedwagon" />
+                android:text="@string/honda_s_wagon" />
 
             <TextView
                 android:id="@+id/second_place_races"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="1" />
+                android:text="@string/one" />
 
             <TextView
                 android:id="@+id/second_place_points"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="5" />
+                android:text="@string/five" />
 
         </TableRow>
 
@@ -137,28 +137,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="3" />
+                android:text="@string/three" />
 
             <TextView
                 android:id="@+id/third_place_vehicle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ford Fiesta" />
+                android:text="@string/ford" />
 
             <TextView
                 android:id="@+id/third_place_races"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="1" />
+                android:text="@string/one" />
 
             <TextView
                 android:id="@+id/third_place_points"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="5" />
+                android:text="@string/five" />
 
         </TableRow>
 
@@ -172,14 +172,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="4" />
+                android:text="@string/four" />
 
             <TextView
                 android:id="@+id/fourth_place_vehicle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Honda Civic" />
+                android:text="@string/honda_civic" />
 
             <TextView
                 android:id="@+id/fourth_place_races"
